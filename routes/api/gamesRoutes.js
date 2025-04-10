@@ -21,6 +21,22 @@ router.get('/', (req, res) => {
     })
 })
 
+// does not work dont know how to fix yet to be continued
+
+// router.get('/genre/:genre', (req, res) => {
+//     const genreParam = req.params.genre.toLowerCase();
+//     const url = 'https://api.sampleapis.com/playstation/games';
+//     let genreArr
+//     axios.get(url)
+//     .then(resp => genreArr = resp.data.filter(item => (item genre == genre))
+//         .then(genreArr => {
+//             res.render('pages/games', {
+//             title: genreParam,
+//             name: `${genreParam} games`,
+//             data: genreArr
+//             })
+//         })
+//     })
 
 
 
