@@ -1,0 +1,68 @@
+<%- include('../partials/header') %>
+
+
+<main class="main" id="mainSingle">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <img src="<%= data.image %>" alt="<%= data.title %>" class="img-fluid w-75">
+        </div>
+        <div class="col-5">
+            <nav class="navigation">
+                <ul class="pagination">
+                    <% if (data.id > 1) { %>
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id - 1 %>" class="page-link">Previous</a>
+                        </li>
+                    <% } %>
+
+                    <% if (data.id < count) { %> 
+                        <li class="page-item">
+                            <a href="/<%= path %>/<%= data.id + 1 %>" class="page-link">Next</a>
+                    <% } %>
+                </ul>
+                </nav>
+                <ul class="stat-list list-group-flush">
+                    <li class="list-item">
+                        Genre: <%= data.genre %>
+                    </li>
+                    </ul>
+                    <ul class="stat-list list-group-flush">
+                        <li class="list-item">
+                            <% data.developers.forEach(item => { %>
+                                <li class="list-item">Developers:<%= item %></li>
+                            <% }) %>
+                    </ul>
+                    <ul class="stat-list list-group-flush">
+                        <li class="list-item">
+                            <% data.publishers.forEach(item => { %>
+                                <li class="list-item">publishers:<%= item %></li>
+                            <% }) %>
+                        </li>
+                    </ul>
+                    <ul class="stat-list list-group-flush">
+                        <li class="list-item">
+                            <ul class="release-date-list">
+                                <% for (const country in data.releaseDates) { %>
+                                    <li class="release-date-item">
+                                        <%= country %>: <%= data.releaseDates[country] %>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>

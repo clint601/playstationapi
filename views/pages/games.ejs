@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+
+
+<main class="main" id="gameMain">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+            <% data.forEach(game => { %>
+                <div class="col">
+                    <div class="card game-card h-100">
+                        <header class="card-header">
+                            <h2 class="card-name">
+                                <%= game.name %>
+                            </h2>
+                        </header>
+                        <div class="card-footer">
+                            <a href="/<%= path %>/<%= game.id %>" class="card-footer link">View More</a>
+                        </div>
+                    </div>
+                </div>
+            <%}) %>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
